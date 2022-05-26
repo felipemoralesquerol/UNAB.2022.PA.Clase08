@@ -1,3 +1,4 @@
+import math
 class FiguraGeometrica():
     tipo = 'Indeterminado1'
     def  __init__(self, color):
@@ -32,6 +33,16 @@ class Cuadrado(FiguraGeometrica):
     def perimetro(self):
         return self.lado * 4    
 
+class Circulo(FiguraGeometrica):
+    tipo = 'Circulo'
+    def __init__(self, color, radio):
+       
+        FiguraGeometrica.__init__(self, color)
+        self.radio = radio
+    
+    def perimetro(self):
+        return 2 * math.pi * self.radio 
+
 # Invocaciones generales
 c = Cuadrado('rojo', 10)
 c = Cuadrado('rojo', 10)
@@ -46,3 +57,6 @@ print(Cuadrado.tipo)
 
 f = FiguraGeometrica('verde')
 print(f.get_color())
+
+ci = Circulo('verde', 12)
+print(ci.perimetro())
